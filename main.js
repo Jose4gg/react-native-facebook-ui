@@ -34,7 +34,12 @@ class AppContainer extends React.Component {
           require('./screens/img/bob.png'),
           require('./screens/img/cookiemonster.jpeg'),
           require('./screens/img/elmo.jpg'),
-          require('./screens/img/me.png')
+          require('./screens/img/me.png'),
+          require('./screens/img/1.jpg'),
+          require('./screens/img/2.jpg'),
+          require('./screens/img/3.jpg'),
+          require('./screens/img/4.jpg'),
+          require('./screens/img/5.jpg'),
         ],
         fonts: [
             Ionicons.font,
@@ -53,16 +58,16 @@ class AppContainer extends React.Component {
 
   render() {
     if (this.state.appIsReady) {
-      return (
-        <View style={styles.container}>
-          <NavigationProvider router={Router}>
-            <StackNavigation id="root" initialRoute={Router.getRoute('rootNavigation')} />
-          </NavigationProvider>
+        return (
+            <View style={styles.container}>
+              <NavigationProvider router={Router}>
+                <StackNavigation id="root" initialRoute={Router.getRoute('rootNavigation')} />
+              </NavigationProvider>
 
-          {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
-          {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
-        </View>
-      );
+                {Platform.OS === 'ios' && <StatusBar barStyle="light-content" />}
+                {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
+            </View>
+        );
     } else {
       return (
         <Exponent.Components.AppLoading />
